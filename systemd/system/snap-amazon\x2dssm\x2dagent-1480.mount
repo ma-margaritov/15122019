@@ -1,0 +1,13 @@
+[Unit]
+Description=Mount unit for amazon-ssm-agent, revision 1480
+Before=snapd.service
+
+[Mount]
+What=/var/lib/snapd/snaps/amazon-ssm-agent_1480.snap
+Where=/snap/amazon-ssm-agent/1480
+Type=squashfs
+Options=nodev,ro,x-gdu.hide
+LazyUnmount=yes
+
+[Install]
+WantedBy=multi-user.target
